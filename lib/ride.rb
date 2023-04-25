@@ -12,4 +12,7 @@ class Ride
 
   end
 
+  def loop?
+    @loop
+  end
 end
