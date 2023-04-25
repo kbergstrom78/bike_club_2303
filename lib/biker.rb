@@ -21,12 +21,24 @@ class Biker
     end 
   end
 
-
   def personal_record(ride)
     if @rides.keys.include?(ride)
       @rides[ride].min
     else
       false
     end
+  end
+
+  def total_logged_rides
+    total = 0
+    @rides.each do |ride, time|
+      total += @rides[ride].count
+    end
+    total
+  end
+
+  def good_to_go(ride)
+    @acceptable_terrain.include?(ride.terrain) &&
+    max_distance >= ride.total_distance
   end
 end
