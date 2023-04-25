@@ -15,5 +15,12 @@ RSpec.describe BikeClub do
     it 'exists' do
       expect(@bike_club).to be_an_instance_of(BikeClub)
     end
+  
+    it 'has attributes' do
+      expect(@bike_club.name).to eq('Kicking Asphalt')
+      expect(@bike_club.bikers).to eq([])
+    end
+  
+  
   end
 end
