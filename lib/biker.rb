@@ -21,4 +21,18 @@ class Biker
     end 
   end
 
+
+  def personal_record(ride)
+    if @rides.keys.include?(ride)
+      @rides[ride].min
+    else
+      false
+    end
+
+
+  end
+
+  # lowest time recorded for a ride
+  # returns false if biker has completed the ride
+
 end
