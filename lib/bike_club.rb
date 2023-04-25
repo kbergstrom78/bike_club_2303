@@ -11,4 +11,16 @@ class BikeClub
     @bikers << biker
   end
 
+  def most_rides
+    @bikers.max_by do |biker|
+      biker.total_logged_rides
+    end
+  end
+
+  def best_time(ride)
+    @bikers.min_by do |biker|
+      biker.personal_record(ride)
+    end
+  end
+
 end
