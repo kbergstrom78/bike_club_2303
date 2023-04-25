@@ -28,11 +28,5 @@ class Biker
     else
       false
     end
-
-
   end
-
-  # lowest time recorded for a ride
-  # returns false if biker has completed the ride
-
 end

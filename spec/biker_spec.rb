@@ -61,5 +61,25 @@ RSpec.describe Biker do
     end
   end
 
+  describe 'biker2 rides' do
+    it 'will not record unacceptable terrain' do
+      @biker2.log_ride(@ride1, 97.0)
+      @biker2.log_ride(@ride2, 67.0)
+      expect(@biker2.rides).to eq({})
+    end
+
+    it 'will not record unacceptable distance' do
+      @biker2.log_ride(@ride1, 97.0)
+      @biker2.log_ride(@ride2, 67.0)
+      @biker2.learn_terrain!(:gravel)
+      @biker2.learn_terrain!(:hills)
+      @biker2.log_ride(@ride1, 95.0)
+      @biker2.log_ride(@ride2, 65.0)
+      expected = {
+        @ride2 => [65.0]
+      }
+      expect(@biker2.rides).to eq(expected)
+    end
+  end
 
 end
