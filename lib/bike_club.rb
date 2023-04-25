@@ -23,4 +23,9 @@ class BikeClub
     end
   end
 
+  def bikers_eligible(ride)
+    @bikers.select do |biker|
+      biker.good_to_go(ride)
+    end
+  end
 end

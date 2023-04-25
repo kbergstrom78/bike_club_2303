@@ -36,4 +36,9 @@ class Biker
     end
     total
   end
+
+  def good_to_go(ride)
+    @acceptable_terrain.include?(ride.terrain) &&
+    max_distance >= ride.total_distance
+  end
 end
